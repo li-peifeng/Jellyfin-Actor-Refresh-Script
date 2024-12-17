@@ -1,6 +1,9 @@
 # Jellyfin Actor Refresh Script
 
-This bash script addresses actor refresh issues encountered in Jellyfin and helps resolve an issue with Infuse not displaying actors correctly. It automates the process of refreshing actor metadata in Jellyfin, resolving inconsistencies and ensuring actors are displayed correctly in both Jellyfin and Infuse.
+This bash script addresses actor refresh issues encountered in Jellyfin and helps resolve an issue with Infuse not displaying actors correctly. It automates the process of refreshing actor metadata in Jellyfin, resolving inconsistencies and ensuring actors are displayed correctly in both Jellyfin and Infuse. 
+
+**Note:** This script is a workaround and may not be the most optimized approach. It is generally intended to be run once or scheduled as a cron job. For information on setting up cron jobs, see [this link](https://www.ostechnix.com/a-beginners-guide-to-cron-jobs/). 
+
 
 ## Background
 
@@ -27,17 +30,7 @@ This bash script provides a solution for Linux users who may not have PowerShell
 
 ## Usage
 
-1. **Prerequisites:**
-   - `curl`
-   - `jq`
-   - `ping`
-   - `sed`
-   - `tail`
-   - `wc`
-
-   (These are usually installed by default on most Linux distributions. If not, use your package manager to install them.)
-
-2. **Configuration:**
+1. **Configuration:**
    - **Find your User ID:**
      - Access your Jellyfin server's web interface.
      - Navigate to the "Users" section in the administration panel.
@@ -53,9 +46,23 @@ This bash script provides a solution for Linux users who may not have PowerShell
      - Replace `api_key` with your actual Jellyfin API key.
      - Replace `user_id` with your Jellyfin user ID.
 
-3. **Running the script:**
-   - To refresh actors without image tags: `bash jellyfin_actor_refresh.sh`
-   - To refresh all actors: `bash jellyfin_actor_refresh.sh --force`
+2. **Running the script:**
+   - Make the script executable: `chmod +x jellyfin_actor_refresh.sh`
+   - To refresh actors without image tags: `./jellyfin_actor_refresh.sh`
+   - To refresh all actors: `./jellyfin_actor_refresh.sh --force`
+
+   **Note:** This script is written for bash. If you are using a different shell, please consult your shell's documentation for the appropriate way to execute scripts.
+
+## Prerequisites
+
+- `curl`
+- `jq`
+- `ping`
+- `sed`
+- `tail`
+- `wc`
+
+(These are usually installed by default on most Linux distributions. If not, use your package manager to install them.)
 
 ## Acknowledgements
 
@@ -64,4 +71,4 @@ This bash script provides a solution for Linux users who may not have PowerShell
 
 ## License
 
-This script is released under the MIT License.
+This script is released under the **GPL V3 License**.
