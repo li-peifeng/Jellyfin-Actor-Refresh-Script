@@ -6,7 +6,7 @@ This bash script addresses actor refresh issues encountered in Jellyfin and help
 
 This script is inspired by and based on a PowerShell script created by [deltonio2](https://github.com/deltonio2) to address the following issues:
 
-- **Jellyfin Actor Refresh Issue:** Jellyfin sometimes fails to refresh actor information properly, leading to inconsistencies in actor metadata. This issue is discussed in the Jellyfin thread: [jellyfin/jellyfin#8103](https://github.com/jellyfin/jellyfin/issues/8103)
+- **Jellyfin Actor Refresh Issue:** Jellyfin sometimes fails to refresh actor information properly. This issue is discussed in the Jellyfin thread: [jellyfin/jellyfin#8103](https://github.com/jellyfin/jellyfin/issues/8103)
 
 While working with the script, it was discovered that this method also helps resolve a separate issue with Infuse:
 
