@@ -9,6 +9,8 @@ api_url="http://server-ip:8096/emby"
 api_key=""
 user_id=""
 
+server_ip=$(echo "$api_url" | sed -E 's#^https?://([^:/]+).*$#\1#')
+
 # --- ANSI escape codes for colors ---
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -22,7 +24,7 @@ if [[ "$1" == "--force" ]]; then
 fi
 
 # --- Check server ping ---
-if ping -c 1 172.16.16.11 > /dev/null 2>&1; then
+if ping -c 1 "$server_ip" > /dev/null 2>&1; then
   echo -e "${GREEN}✔ Server is reachable.${NC}"
 else
   echo -e "${RED}✘ Server is not reachable. Exiting.${NC}"
